@@ -1,0 +1,35 @@
+import os
+
+def test_find_with_exact_path(image_path,model_path,backends):
+    threshold = verification.find_threshold(model_name=model_path, distance_metric="cosine")
+    img_path = os.path.join("/content/dataset",image_path)
+    img1 = cv2.imread(img_path)
+    dfs = DeepFace.find(img_path=img1, db_path="/content/dataset",model_name = model_path, detector_backend = backends , silent=True)
+    assert len(dfs) > 0
+    for df in dfs:
+        assert isinstance(df, pd.DataFrame)
+
+        identity_df = df[df["identity"] == img_path]
+        assert identity_df.shape[0] > 0
+
+        # validate reproducability
+        assert identity_df["distance"].values[0] < threshold
+
+        df = df[df["identity"] != img_path]
+        print(list(df["identity"]))
+        logger.debug(df.head())
+        assert df.shape[0] > 0
+    logger.info("✅ test find for exact path done")
+    return list(df["identity"])
+
+try:
+  res=test_find_with_exact_path("img18.jpg",'ArcFace',backends[4])
+except :
+  print("may be not find face -------------###############")
+
+
+
+try:
+  res=test_find_with_exact_path("img12.jpg",'ArcFace',backends[4])
+except :
+  print("may be not find face -------------###############")

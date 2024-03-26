@@ -1,0 +1,66 @@
+<Modal style={modalTimerStyle} show={timerModal} onHide={handleCloseModalTimer} centered>
+<Modal.Body style={{ backgroundColor: 'black' }}>
+  <Timer value={formatTime(elapsedTime)} />
+</Modal.Body>
+</Modal>
+
+{/* Modal for "Join Red" */}
+<Modal style={modalStyle} show={showJoinColorModal} onHide={handleCloseModal} backdrop="static" centered>
+<Modal.Header closeButton>
+  <Modal.Title>Join Contest</Modal.Title>
+</Modal.Header>
+<Modal.Body>
+  <p>Balance : {balance}</p>
+  {/* Add content for the modal here */}
+  {/* <p>Select the amount:</p> */}
+  <div className="d-flex align-items-center justify-content-center">
+    <Button variant='danger' className="flex-grow-1 m-2" onClick={handleDecrement}> -10 </Button>
+    <p className="flex-grow-1 m-2 text-center">{placeAmount}</p>
+    <Button variant='success' className="flex-grow-1 m-2" onClick={handleIncrement}> +10 </Button> 
+  </div>
+
+  <div className='d-flex align-items-center justify-content-center'>
+     <Button variant="outline-secondary" onClick={() => handleClick(50)}>50</Button>
+    <Button variant="outline-secondary" onClick={() => handleClick(100)}>100</Button>
+    <Button variant="outline-secondary" onClick={() => handleClick(150)}>150</Button>
+    
+    <input
+      type="number"
+      value={placeAmount}
+      onChange={handleChange}
+    />
+  </div>
+</Modal.Body>
+<Modal.Footer>
+  <Button variant="secondary" onClick={handleCloseModal}>
+    Close
+  </Button>
+  {/* You can remove the Place Order button from here */}
+  <Button variant="primary" onClick={handlePlaceOrder}>
+    Place Order
+  </Button>
+  {/* Add additional buttons or actions as needed */}
+</Modal.Footer>
+</Modal>
+
+
+
+ // const handleIncrement = () => {
+  //   setPlaceAmount(prevAmount => prevAmount + 10);
+  // };
+
+  // const handleDecrement = () => {
+  //   if (placeAmount >= 10) {
+  //     setPlaceAmount(prevAmount => prevAmount - 10);
+  //   }
+  // };
+  // const handleClick = (data) => {
+  //   // Check if data is a valid number
+  //   if (typeof data === 'number' && !isNaN(data)) {
+  //     // If data is a valid number, update placeAmount
+  //     setPlaceAmount(data);
+  //   } else {
+  //     console.error('Invalid data received:', data);
+  //     // Handle the error or log it accordingly
+  //   }
+  // };
