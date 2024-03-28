@@ -434,9 +434,9 @@ def rename_column(table_name, old_column_name, new_column_name):
 # rename_column('DepositRequests', 'data', 'images')
 
 
-def create_tables():
-    with Database(db_name) as conn:
-        cursor = conn.cursor()
+# def create_tables():
+#     with Database(db_name) as conn:
+#         cursor = conn.cursor()
 
         # cursor.execute('''
         #     CREATE TABLE IF NOT EXISTS User (
