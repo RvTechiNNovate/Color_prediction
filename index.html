@@ -22,7 +22,8 @@
         header {
             background: linear-gradient(90deg, #2b4b8f, #4a77d4);
             color: white;
-            padding: 15px 20px;
+            padding: 20px;
+            text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
@@ -30,21 +31,14 @@
             animation: slideIn 0.5s ease-out;
         }
 
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
+        header .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
         }
 
-        .fa-balance-scale {
+        header .fa-balance-scale {
             font-size: 36px;
             color: #ffd700;
             animation: pulse 2s infinite;
@@ -52,35 +46,15 @@
 
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 34px;
             font-weight: 700;
             letter-spacing: 1.5px;
         }
 
-        nav {
-            margin-top: 10px;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
+        header p {
+            margin: 5px 0 0;
             font-size: 16px;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        nav a:hover {
-            background: rgba(255, 215, 0, 0.2);
-            transform: scale(1.05);
-        }
-
-        nav a.active {
-            background: #ffd700;
-            color: #2b4b8f;
+            opacity: 0.9;
         }
 
         /* Main Container */
@@ -132,36 +106,25 @@
             margin-left: auto;
         }
 
-        /* Footer */
+        /* Footer with Input */
         footer {
             background: linear-gradient(90deg, #2b4b8f, #4a77d4);
             color: white;
             padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
             position: sticky;
             bottom: 0;
             z-index: 10;
         }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 10px;
-        }
-
-        .input-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-            max-width: 700px; /* Limits width for centering */
-        }
-
         .input-wrapper {
             flex: 1;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
         }
 
         #userInput {
@@ -198,10 +161,9 @@
             transform: scale(1.05);
         }
 
-        .legal {
+        footer .legal {
             font-size: 14px;
             opacity: 0.9;
-            text-align: center;
         }
 
         footer a {
@@ -214,7 +176,7 @@
         }
 
         /* Coming Soon Overlay */
-        .coming-soon {
+        .overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -225,16 +187,15 @@
             justify-content: center;
             align-items: center;
             z-index: 20;
-            backdrop-filter: blur(3px);
             transition: opacity 0.5s ease;
         }
 
-        .coming-soon.hidden {
+        .overlay.hidden {
             opacity: 0;
             pointer-events: none;
         }
 
-        .coming-soon div {
+        .overlay-content {
             background: linear-gradient(135deg, #4a77d4, #2b4b8f);
             padding: 40px 60px;
             border-radius: 15px;
@@ -245,14 +206,14 @@
             position: relative;
         }
 
-        .coming-soon h2 {
+        .overlay-content h2 {
             margin: 0;
             font-size: 48px;
             font-weight: 700;
             letter-spacing: 2px;
         }
 
-        .coming-soon p {
+        .overlay-content p {
             margin: 10px 0 0;
             font-size: 18px;
             opacity: 0.9;
@@ -304,19 +265,13 @@
     </style>
 </head>
 <body>
-    <!-- Header with Centered Logo and Nav -->
+    <!-- Header with Logo -->
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <i class="fas fa-balance-scale"></i>
-                <h1>VakeelChat</h1>
-            </div>
-            <nav>
-                <a href="#" class="active">Home</a>
-                <a href="#">About</a>
-                <a href="#">FAQ</a>
-            </nav>
+        <div class="logo">
+            <i class="fas fa-balance-scale"></i>
+            <h1>VakeelChat</h1>
         </div>
+        <p>Legal Made Simple</p>
     </header>
 
     <!-- Main Content with Chatbot -->
@@ -328,22 +283,17 @@
         </div>
     </div>
 
-    <!-- Footer with Centered Input and Reserved Sentence Below -->
+    <!-- Footer with Input and Send Button -->
     <footer>
-        <div class="footer-content">
-            <div class="input-group">
-                <div class="input-wrapper">
-                    <textarea id="userInput" rows="1" placeholder="Ask your legal question..."></textarea>
-                </div>
-                <button id="sendBtn">Send</button>
-            </div>
-            <span class="legal">© 2025 VakeelChat | <a href="#">Terms</a> | Not Legal Advice</span>
+        <div class="input-wrapper">
+            <textarea id="userInput" rows="1" placeholder="Ask your legal question..."></textarea>
         </div>
+        <button id="sendBtn">Send</button>
     </footer>
 
-    <!-- Coming Soon Overlay with Close Button -->
-    <div class="coming-soon" id="comingSoon">
-        <div>
+    <!-- Overlay with Close Button -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
             <button class="close-btn" id="closeBtn">✖</button>
             <h2>Coming Soon</h2>
             <p>Stay tuned for the full VakeelChat experience!</p>
@@ -390,7 +340,7 @@
 
         // Close overlay functionality
         document.getElementById('closeBtn').addEventListener('click', () => {
-            const overlay = document.getElementById('comingSoon');
+            const overlay = document.getElementById('overlay');
             overlay.classList.add('hidden');
         });
     </script>
