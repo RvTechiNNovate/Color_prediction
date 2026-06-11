@@ -3,554 +3,1195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VakeelChat.com – Premium Legal Tech Domain For Sale</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2Lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary: #2b4b8f;
-            --primary-light: #4a77d4;
-            --accent: #ffd700;
-            --background-grad: linear-gradient(135deg, #d4e4ff, #b3cffa);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(--background-grad);
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: #333;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 32px;
-            color: var(--accent);
-            animation: pulse 2s infinite;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text h1 {
-            margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
-
-        .logo-text span {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-
-        .header-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 999px;
-            padding: 6px 14px;
-            font-size: 12px;
-        }
-
-        .header-badge i {
-            color: var(--accent);
-        }
-
-        /* Main Layout */
-        .main {
-            flex: 1;
-            padding: 24px;
-            display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
-            gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto 32px auto;
-        }
-
-        @media (max-width: 900px) {
-            .main {
-                grid-template-columns: minmax(0, 1fr);
+    <title>VakeelChat — AI-Powered Legal Automation & Copilot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
             }
         }
-
-        /* Left: Hero + Details */
-        .hero-card {
-            background: rgba(255, 255, 255, 0.97);
-            border-radius: 20px;
-            padding: 28px 26px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            animation: fadeIn 0.4s ease-out;
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
         }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            background: rgba(43, 75, 143, 0.05);
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
             border-radius: 999px;
-            font-size: 12px;
-            color: var(--primary);
-            margin-bottom: 14px;
         }
-
-        .hero-tag i {
-            color: var(--primary-light);
-        }
-
-        .hero-title {
-            font-size: 30px;
-            margin: 0 0 8px 0;
-            color: #1a2750;
-        }
-
-        .hero-subtitle {
-            font-size: 16px;
-            margin: 0 0 18px 0;
-            color: #4a4a4a;
-        }
-
-        .domain-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.4);
             border-radius: 999px;
-            padding: 8px 16px;
-            background: #f5f7ff;
-            border: 1px dashed rgba(43, 75, 143, 0.3);
-            font-size: 14px;
-            margin-bottom: 20px;
         }
-
-        .domain-pill span.domain {
-            font-weight: 700;
-            color: var(--primary);
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(148, 163, 184, 0.6);
         }
-
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .highlight-item {
-            background: #f7f8ff;
-            border-radius: 14px;
-            padding: 12px 14px;
-            font-size: 13px;
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .highlight-item i {
-            margin-top: 3px;
-            color: var(--primary-light);
-        }
-
-        .highlight-item strong {
-            display: block;
-            margin-bottom: 4px;
-            color: #1f2b4a;
-        }
-
-        .cta-row {
-            margin-top: 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .btn-primary {
-            border: none;
-            outline: none;
-            cursor: pointer;
-            border-radius: 999px;
-            padding: 11px 22px;
-            font-size: 15px;
-            font-weight: 600;
-            background: var(--accent);
-            color: var(--primary);
-            display: inline-flex;
-            gap: 8px;
-            align-items: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1px) scale(1.02);
-            background: #ffcc00;
-            box-shadow: 0 9px 18px rgba(0,0,0,0.18);
-        }
-
-        .btn-ghost {
-            border-radius: 999px;
-            padding: 9px 18px;
-            border: 1px solid rgba(43, 75, 143, 0.3);
-            background: transparent;
-            font-size: 13px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            color: #1f2b4a;
-        }
-
-        .contact-details {
-            margin-top: 14px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .contact-details a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
-
-        /* Right: Chat Preview Card */
-        .chat-card {
-            background: rgba(255, 255, 255, 0.97);
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            min-height: 360px;
-            max-height: 520px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            overflow: hidden;
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        .chat-card-header {
-            padding: 14px 18px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .chat-card-header-left {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .bot-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #4ade80;
-        }
-
-        .chat-card-header-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            opacity: 0.85;
-        }
-
-        .chat-area {
-            flex: 1;
-            padding: 16px 16px 8px 16px;
-            overflow-y: auto;
-        }
-
-        .message {
-            margin: 10px 0;
-            padding: 11px 14px;
-            border-radius: 14px;
-            max-width: 84%;
-            line-height: 1.5;
-            font-size: 13px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        .bot {
-            background: #4a77d4;
-            color: white;
-        }
-
-        .user {
-            background: #2b4b8f;
-            color: white;
-            margin-left: auto;
-        }
-
-        .chat-footer {
-            padding: 10px 12px 12px 12px;
-            border-top: 1px solid #e5e5e5;
-            background: #f8f9ff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .chat-footer input {
-            flex: 1;
-            padding: 8px 10px;
-            border-radius: 999px;
-            border: none;
-            background: #eef0fb;
-            font-size: 12px;
-            outline: none;
-        }
-
-        .chat-footer button {
-            border-radius: 999px;
-            border: none;
-            background: var(--primary);
-            color: white;
-            width: 32px;
-            height: 32px;
-            cursor: default;
-            opacity: 0.7;
-        }
-
-        .chat-muted {
-            font-size: 11px;
-            text-align: center;
-            padding: 6px 10px 8px 10px;
-            color: #777;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 10px 16px 18px 16px;
-            font-size: 12px;
-            color: #444;
-        }
-
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animations */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+        .tab-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
-<body>
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <i class="fas fa-balance-scale"></i>
-            <div class="logo-text">
-                <h1>VakeelChat</h1>
-                <span>Legal · AI · India & Global</span>
+<body class="bg-[#f8fafc] text-[#1e293b] font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-navy-950/90 text-white border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-11 w-11 bg-amber-500 rounded-xl flex items-center justify-center text-navy-950 shadow-lg shadow-amber-500/20">
+                    <i class="fas fa-balance-scale text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">VakeelChat</span>
+                        <span class="bg-blue-500/15 border border-blue-500/30 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Active Copilot</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">AI Legal Intelligence Hub</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#features" class="hover:text-amber-400 transition-colors">Core Features</a>
+                <a href="#interactive-suite" class="hover:text-amber-400 transition-colors">Workspace Tools</a>
+                <a href="#pricing" class="hover:text-amber-400 transition-colors">Pricing Plans</a>
+                <a href="#faq" class="hover:text-amber-400 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="flex items-center gap-4">
+                <a href="#interactive-suite" class="hidden sm:inline-flex bg-amber-500 hover:bg-amber-400 text-navy-950 font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 items-center gap-2">
+                    <i class="fa-solid fa-laptop-code"></i> Launch Sandbox
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
             </div>
         </div>
-        <div class="header-badge">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>Premium domain available for acquisition</span>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-950 border-t border-slate-800 px-6 py-6 space-y-4">
+            <a href="#features" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2">Core Features</a>
+            <a href="#interactive-suite" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2">Workspace Tools</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2">Pricing Plans</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-amber-400 py-2">FAQ</a>
+            <a href="#interactive-suite" onclick="toggleMobileMenu()" class="block bg-amber-500 text-center text-navy-950 font-semibold py-3 rounded-lg">Launch Sandbox</a>
         </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="main">
-        <!-- LEFT: INFO & CTA -->
-        <section class="hero-card">
-            <div class="hero-tag">
-                <i class="fa-solid fa-gavel"></i>
-                <span>Perfect for legal-tech, AI legal assistant, law firms, or startups</span>
-            </div>
+    <!-- HERO SECTION WITH TWO-COLUMN PREMIUM CONTENT -->
+    <section class="relative bg-gradient-to-b from-navy-950 via-[#0b0f19] to-slate-900 py-16 lg:py-24 text-white overflow-hidden">
+        <!-- Abstract light circles background -->
+        <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/10 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"></div>
 
-            <h2 class="hero-title">VakeelChat.com is for sale</h2>
-            <p class="hero-subtitle">
-                Build the next-generation legal assistant, case management SaaS, or law firm brand on a memorable,
-                India-focused name that users understand instantly.
-            </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hand Brand Pitch -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-semibold text-amber-400 tracking-wide">
+                        <i class="fa-solid fa-star-of-life animate-spin text-[10px]"></i> AI-First Legal Innovation
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
+                        Instant Legal Intelligence. <br>
+                        <span class="bg-gradient-to-r from-amber-400 via-yellow-300 to-primary-500 bg-clip-text text-transparent">Zero Complexity.</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
+                        Democratizing complex jurisprudence. VakeelChat helps businesses, legal practitioners, and startups audit contracts, draft ironclad agreements, and analyze regional statutory compliance with high-speed precision.
+                    </p>
 
-            <div class="domain-pill">
-                <i class="fa-solid fa-globe"></i>
-                <span class="domain">VakeelChat.com</span>
-                <span>· short · brandable · legal niche</span>
-            </div>
+                    <!-- Feature checkmarks in Hero -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-300 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-check text-amber-400"></i> Section 80C &amp; Statutory Analysis
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-check text-amber-400"></i> Instant Risk Score Heatmaps
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-check text-amber-400"></i> Plain-English Legal Explainer
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-circle-check text-amber-400"></i> Secure, Encrypted Cloud Pipelines
+                        </div>
+                    </div>
 
-            <div class="highlights">
-                <div class="highlight-item">
-                    <i class="fa-solid fa-bolt"></i>
-                    <div>
-                        <strong>Instant brand recall</strong>
-                        “Vakeel” + “Chat” clearly says “talk to a lawyer / legal assistant” – ideal for GenZ, Bharat, and global audiences.
+                    <!-- CTA Actions in Hero -->
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#interactive-suite" class="bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-xl shadow-amber-500/10 flex items-center gap-2">
+                            <span>Get Started Instantly</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#features" class="bg-slate-800/80 hover:bg-slate-700 border border-slate-700 px-8 py-4 rounded-xl font-semibold transition-all">
+                            Learn More
+                        </a>
+                    </div>
+
+                    <!-- Client Trust Banner -->
+                    <div class="pt-6 border-t border-slate-800/60 max-w-lg">
+                        <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-3">Engineered for absolute security</p>
+                        <div class="flex items-center gap-6 opacity-60">
+                            <span class="text-sm font-bold tracking-wider">ISO 27001 SECURE</span>
+                            <span class="text-sm font-bold tracking-wider">GDPR COMPLIANT</span>
+                            <span class="text-sm font-bold tracking-wider">100% PRIVATE</span>
+                        </div>
                     </div>
                 </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-robot"></i>
-                    <div>
-                        <strong>AI-ready positioning</strong>
-                        Perfect for GPT-powered legal Q&A, document review, client intake, or legal workflows.
+
+                <!-- Right Hand Sandbox / Dynamic Chat Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl relative">
+                        <div class="bg-slate-950 px-6 py-4 border-b border-slate-800/80 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-200">VakeelChat AI Assistant</h4>
+                                    <p class="text-[10px] text-slate-400">Interactive Simulation Mode</p>
+                                </div>
+                            </div>
+                            <span class="bg-slate-800 text-slate-300 text-[10px] px-2.5 py-1 rounded-md font-mono border border-slate-700">Sandbox Engine</span>
+                        </div>
+
+                        <!-- Chat stream -->
+                        <div id="demoChatStream" class="h-80 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-950/40 text-sm">
+                            <!-- Bot Msg -->
+                            <div class="flex items-start gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500 text-navy-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-md">
+                                    VK
+                                </div>
+                                <div class="bg-slate-800/80 border border-slate-700/50 rounded-2xl rounded-tl-none p-3.5 text-slate-200 max-w-[85%]">
+                                    👋 Namaste! I am your <strong>VakeelChat</strong> companion. Ask me a question about legal rules, leases, tax deductions, or service standards.
+                                </div>
+                            </div>
+                            <!-- User Msg -->
+                            <div class="flex items-start gap-2.5 justify-end">
+                                <div class="bg-primary-500 border border-primary-500/20 rounded-2xl rounded-tr-none p-3.5 text-white max-w-[85%]">
+                                    What documents are essential for purchasing a flat or property?
+                                </div>
+                            </div>
+                            <!-- Bot response -->
+                            <div class="flex items-start gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500 text-navy-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-md">
+                                    VK
+                                </div>
+                                <div class="bg-slate-800/80 border border-slate-700/50 rounded-2xl rounded-tl-none p-3.5 text-slate-200 max-w-[85%]">
+                                    Essential property papers include:
+                                    <br>• Sale Deed &amp; Mother Deed
+                                    <br>• Encumbrance Certificate (EC)
+                                    <br>• Approved Building Plan / RERA Registration
+                                    <br>• Property Tax Receipts &amp; Khata certificate.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Input / Prompt Suggestions -->
+                        <div class="p-3 border-t border-slate-800/80 bg-slate-950/80">
+                            <!-- Prompt suggestions -->
+                            <div class="flex gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none custom-scrollbar">
+                                <button onclick="triggerQuickPrompt('Can you summarize standard NDA risks?')" class="shrink-0 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-[11px] px-3 py-1.5 rounded-full transition-all">
+                                    🔍 NDA Risks?
+                                </button>
+                                <button onclick="triggerQuickPrompt('Explain Section 80C under Income Tax.')" class="shrink-0 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-[11px] px-3 py-1.5 rounded-full transition-all">
+                                    💰 Tax Section 80C
+                                </button>
+                                <button onclick="triggerQuickPrompt('What is the standard stamp duty for rent agreements?')" class="shrink-0 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-[11px] px-3 py-1.5 rounded-full transition-all">
+                                    🏠 Rent Stamp Duty
+                                </button>
+                            </div>
+
+                            <!-- Input Form -->
+                            <div class="flex items-center gap-2">
+                                <input type="text" id="demoChatInput" placeholder="Ask VakeelAI or type your scenario..." class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500/80" onkeypress="handleDemoKeyPress(event)">
+                                <button onclick="sendDemoMessage()" class="bg-amber-500 hover:bg-amber-400 text-navy-950 h-11 w-11 rounded-xl flex items-center justify-center transition-all shrink-0">
+                                    <i class="fa-solid fa-paper-plane text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="highlight-item">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- POWERHOUSE FEATURES SECTION -->
+    <section id="features" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-primary-500">Why Modern Teams Love VakeelChat</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-navy-900 mt-2">Simplify Legal Workflows Without Costly Delays</h2>
+            <p class="text-slate-500 mt-4 text-base">We combine highly contextual AI parsing models with structured statutory indexes to build secure, rapid-fire tools for builders, businesses, and advisors.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature Card 1 -->
+            <div class="bg-white border border-slate-200/60 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center text-primary-500 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">AI Clause Vulnerability Finder</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Instantly analyze Non-Compete, Indemnification, or Termination clauses to find high-liability phrasing before signing agreements.</p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="bg-white border border-slate-200/60 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Plain-Language Translator</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Turn heavy legal jargon into simple, actionable bullet points that anyone can easily read, comprehend, and trust.</p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="bg-white border border-slate-200/60 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Interactive Draft Constructor</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Create fully structured legal templates tailored to specific situations, with localized statutory citations pre-filled instantly.</p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="bg-white border border-slate-200/60 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Stamp &amp; Court Fee Estimator</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Dynamic calculation vectors for stamp duty and estimated state filing costs based on custom transaction scope values.</p>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="bg-white border border-slate-200/60 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
                     <i class="fa-solid fa-scale-balanced"></i>
-                    <div>
-                        <strong>Legal niche</strong>
-                        Great fit for solo practitioners, law firms, legal marketplaces, and startup products.
-                    </div>
                 </div>
-                <div class="highlight-item">
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
-                    <div>
-                        <strong>Investment value</strong>
-                        Own a strong .com asset in the fast-growing legal-tech and AI space.
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Indian Statutory Citations</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Stay updated with instant statutory linkages to contextualize real estate, lease, and transactional protection parameters.</p>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="bg-white border border-slate-200/60 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900 mb-3">Enterprise Data Guardrails</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">No shared training models. Your contracts and strategic inquiries remain strictly private, protected with absolute data isolation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE WORKSPACE SUITE -->
+    <section id="interactive-suite" class="py-20 lg:py-24 bg-slate-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400">Take control of your workflows</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-2">VakeelChat Interactive Sandbox Suite</h2>
+                <p class="text-slate-400 mt-4">Select a custom engine below to interact directly with our simulated toolchains in real-time. Experience advanced legal assistance instantly.</p>
+            </div>
+
+            <!-- Tab Buttons Container -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="switchTab('analyzer-tab')" id="btn-analyzer-tab" class="tab-button flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold transition-all bg-amber-500 text-navy-950 shadow-lg shadow-amber-500/10">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i> AI Clause Analyzer
+                </button>
+                <button onclick="switchTab('draft-tab')" id="btn-draft-tab" class="tab-button flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold transition-all bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-800">
+                    <i class="fa-solid fa-file-signature"></i> Contract Template Builder
+                </button>
+                <button onclick="switchTab('calculator-tab')" id="btn-calculator-tab" class="tab-button flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold transition-all bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-800">
+                    <i class="fa-solid fa-calculator"></i> Indian Stamp &amp; Fee Estimator
+                </button>
+            </div>
+
+            <!-- TAB 1: AI CLAUSE ANALYZER -->
+            <div id="analyzer-tab" class="tab-content block transition-opacity duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Input Section -->
+                    <div class="lg:col-span-6 space-y-6 bg-slate-900 p-6 rounded-2xl border border-slate-850">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-200 mb-2">Audit Clause Risks</h3>
+                            <p class="text-xs text-slate-400">Select a risky draft clause pattern or paste your own document clause below to discover compliance issues instantly.</p>
+                        </div>
+
+                        <!-- Sample clauses -->
+                        <div class="space-y-2">
+                            <span class="text-xs text-slate-400 block font-bold">Try Sample Clauses:</span>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="setSampleClause('nda')" class="bg-slate-950 border border-slate-800 text-slate-300 hover:border-slate-600 text-xs px-3 py-1.5 rounded-lg">
+                                    Unilateral NDA Clause
+                                </button>
+                                <button onclick="setSampleClause('noncompete')" class="bg-slate-950 border border-slate-800 text-slate-300 hover:border-slate-600 text-xs px-3 py-1.5 rounded-lg">
+                                    Extreme Non-Compete
+                                </button>
+                                <button onclick="setSampleClause('indemnity')" class="bg-slate-950 border border-slate-800 text-slate-300 hover:border-slate-600 text-xs px-3 py-1.5 rounded-lg">
+                                    Ambiguous Indemnification
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Main Input Area -->
+                        <div class="space-y-2">
+                            <label class="text-xs font-semibold text-slate-300">Contract Text Passage:</label>
+                            <textarea id="analyzerInput" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs text-slate-200 font-mono focus:outline-none focus:border-amber-500/80 custom-scrollbar" placeholder="Paste complex contract clauses here to run the audit..."></textarea>
+                        </div>
+
+                        <button onclick="runAuditAnalysis()" class="w-full bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold py-3 px-5 rounded-xl text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i> Scan Clause Risks Now
+                        </button>
                     </div>
+
+                    <!-- Output Interactive Map -->
+                    <div class="lg:col-span-6 bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 relative min-h-[400px]">
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-300">Diagnostic Engine</h4>
+                                <p class="text-[10px] text-slate-500">Live annotation &amp; risk score breakdown</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-slate-400">Risk Severity Score:</span>
+                                <span id="riskScoreBadge" class="bg-slate-800 text-slate-300 font-extrabold text-sm px-3 py-1 rounded-lg border border-slate-700">--</span>
+                            </div>
+                        </div>
+
+                        <!-- Blank State Placeholder -->
+                        <div id="analyzerEmptyState" class="flex flex-col items-center justify-center py-20 text-center">
+                            <div class="w-16 h-16 bg-slate-850 rounded-2xl flex items-center justify-center text-slate-500 mb-4">
+                                <i class="fa-solid fa-arrows-to-eye text-2xl"></i>
+                            </div>
+                            <h5 class="text-sm font-bold text-slate-300">Ready for Legal Diagnostic Review</h5>
+                            <p class="text-xs text-slate-500 max-w-xs mt-2">Paste and trigger a scan to highlight loopholes, governing laws, and ambiguity indicators instantly.</p>
+                        </div>
+
+                        <!-- Analysis Response Content (hidden by default) -->
+                        <div id="analyzerResultsState" class="hidden space-y-6">
+                            <!-- Visual Meter -->
+                            <div class="w-full bg-slate-950 rounded-full h-2.5 overflow-hidden">
+                                <div id="riskMeterBar" class="bg-emerald-500 h-full w-0 transition-all duration-700"></div>
+                            </div>
+
+                            <!-- Highlights -->
+                            <div class="space-y-4">
+                                <span class="text-xs font-bold text-slate-400 block uppercase tracking-wider">Crucial Legal Highlights</span>
+                                <div id="analyzerAnnotationArea" class="bg-slate-950 rounded-xl p-4 text-xs font-mono border border-slate-800 leading-relaxed max-h-48 overflow-y-auto custom-scrollbar">
+                                    <!-- Dynamic text insert with highlighted spans -->
+                                </div>
+                            </div>
+
+                            <!-- Bullet Explanations -->
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-slate-400 block uppercase tracking-wider">Defect Breakdown &amp; Mitigation</span>
+                                <div id="analysisDetails" class="space-y-2.5 text-xs">
+                                    <!-- Dynamic list items -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
 
-            <!-- CTA -->
-            <div class="cta-row">
-                <!-- Update href with your email/marketplace link -->
-                <a href="mailto:youremail@example.com?subject=Interested%20in%20VakeelChat.com" class="btn-primary">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <span>Make an offer</span>
+            <!-- TAB 2: CONTRACT TEMPLATE BUILDER -->
+            <div id="draft-tab" class="tab-content hidden transition-opacity duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Draft Configurations inputs -->
+                    <div class="lg:col-span-5 bg-slate-900 border border-slate-850 p-6 rounded-2xl space-y-5">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-200">Construct Standard Drafts</h3>
+                            <p class="text-xs text-slate-400">Fill in critical transaction points to dynamically generate standard legal structures.</p>
+                        </div>
+
+                        <!-- Form inputs -->
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1.5">Document Framework Type:</label>
+                                <select id="draftDocType" onchange="updateDraftForm()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-300 focus:outline-none focus:border-amber-500">
+                                    <option value="nda">Mutual Non-Disclosure Agreement (NDA)</option>
+                                    <option value="lease">Model Rent / Lease Agreement Framework</option>
+                                    <option value="consultancy">Freelancer &amp; Consultancy Engagement Letter</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block font-semibold text-slate-300 mb-1.5">First Party (Discloser):</label>
+                                    <input type="text" id="draftPartyOne" value="Acme Technologies Private Ltd" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label class="block font-semibold text-slate-300 mb-1.5">Second Party (Recipient):</label>
+                                    <input type="text" id="draftPartyTwo" value="John Doe Consultant" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:border-amber-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div id="paramLabelValueWrapper">
+                                    <label id="paramLabel" class="block font-semibold text-slate-300 mb-1.5">Effective Duration:</label>
+                                    <input type="text" id="draftValParam" value="24 Months" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label class="block font-semibold text-slate-300 mb-1.5">Governing Jurisdiction:</label>
+                                    <input type="text" id="draftJurisdiction" value="State of Karnataka, India" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:border-amber-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="generateCustomDraft()" class="w-full bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold py-3 rounded-xl text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-invoice"></i> Compile Draft Outline
+                        </button>
+                    </div>
+
+                    <!-- Live Dynamic Draft Editor Preview -->
+                    <div class="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 relative">
+                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-800">
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-300">Legal Draft Layout</h4>
+                                <p class="text-[10px] text-slate-500">Auto-formatted structured outlines</p>
+                            </div>
+                            <button onclick="copyGeneratedDraftToClipboard()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 hover:text-white px-3.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-2 border border-slate-700">
+                                <i class="fa-solid fa-copy"></i> <span id="copyBtnText">Copy Outline</span>
+                            </button>
+                        </div>
+
+                        <!-- Draft Display Body -->
+                        <div id="draftOutputBody" class="bg-slate-950 border border-slate-850 p-6 rounded-xl font-mono text-xs text-slate-300 leading-relaxed max-h-[350px] overflow-y-auto custom-scrollbar whitespace-pre-line">
+                            <!-- Populated on startup -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TAB 3: STAMP & COURT FEE ESTIMATOR -->
+            <div id="calculator-tab" class="tab-content hidden transition-opacity duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Calculation Config Card -->
+                    <div class="lg:col-span-5 bg-slate-900 border border-slate-850 p-6 rounded-2xl space-y-5">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-200">Legal Fee &amp; Stamp Duty Tool</h3>
+                            <p class="text-xs text-slate-400">Calculate simulated stamp configurations and standard filing estimates under Indian jurisdictional standards.</p>
+                        </div>
+
+                        <!-- Calc fields -->
+                        <div class="space-y-4 text-xs">
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1.5">State/Jurisdiction (Varying Stamp Acts):</label>
+                                <select id="calcState" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-300 focus:outline-none focus:border-amber-500">
+                                    <option value="karnataka">Karnataka (High Stamp Scale)</option>
+                                    <option value="maharashtra">Maharashtra (Consolidated Scale)</option>
+                                    <option value="delhi">Delhi NCT (Standard Surcharges)</option>
+                                    <option value="other">Default Generic Zone (0.5% standard)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block font-semibold text-slate-300 mb-1.5">Document / Suit Type:</label>
+                                <select id="calcDocType" onchange="updateCalcPlaceholders()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-300 focus:outline-none focus:border-amber-500">
+                                    <option value="commercial_lease">Commercial / Residential Property Lease</option>
+                                    <option value="business_contract">Business Agreement / Partnership Deeds</option>
+                                    <option value="recovery_suit">Civil / Debt Recovery Suit</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label id="calcValueLabel" class="block font-semibold text-slate-300 mb-1.5">Annual Rent / Claim Amount (INR):</label>
+                                <input type="number" id="calcValueAmount" value="500000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+
+                        <button onclick="calculateSimulatedFees()" class="w-full bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold py-3 rounded-xl text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator"></i> Run Fee Computation
+                        </button>
+                    </div>
+
+                    <!-- Calculation Results Card -->
+                    <div class="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 relative">
+                        <h4 class="text-sm font-bold text-slate-300 mb-6 pb-4 border-b border-slate-800">Computation &amp; Filing Breakdown</h4>
+
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-center">
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-850">
+                                <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider mb-1">Estimated Stamp Duty</span>
+                                <span id="resStampDuty" class="text-2xl font-black text-amber-400">₹2,500</span>
+                            </div>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-850">
+                                <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider mb-1">Filing Court Fees</span>
+                                <span id="resCourtFee" class="text-2xl font-black text-primary-500">₹7,500</span>
+                            </div>
+                        </div>
+
+                        <!-- Bullet explanation list -->
+                        <div class="bg-slate-950 border border-slate-850 rounded-xl p-4 text-xs space-y-3">
+                            <h5 class="font-bold text-slate-300">Breakdown Assumptions &amp; Legal Framework Notes:</h5>
+                            <div class="space-y-2 text-slate-400 leading-relaxed" id="calcFrameworkExplainer">
+                                <p>• <strong>Stamp Duty Calculation Basis:</strong> Calculated at approximately 0.5% under local Stamp Rules based on transaction amount.</p>
+                                <p>• <strong>Civil Court Fee Scale:</strong> Scaled estimation matches jurisdictional court fees and suits valuation acts.</p>
+                                <p>• <strong>Processing Speed Timeline:</strong> Standard processing estimates are 48 hours for online e-Stamping validation procedures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRICING MATRIX -->
+    <section id="pricing" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-primary-500">Flexible Subscription Pricing Plans</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-navy-900 mt-2">Value Plans Built for Growth</h2>
+            <p class="text-slate-500 mt-4">Accelerate compliance, boost draft efficiency, and manage risk securely with transparent scaling structures.</p>
+
+            <!-- Monthly/Yearly toggle -->
+            <div class="inline-flex items-center gap-3 mt-8 bg-slate-200/60 p-1.5 rounded-xl border border-slate-200">
+                <button onclick="toggleBillingPeriod('monthly')" id="billingMonthlyBtn" class="bg-white text-navy-900 px-4 py-2 rounded-lg text-xs font-bold transition-all shadow-sm">
+                    Monthly Billing
+                </button>
+                <button onclick="toggleBillingPeriod('yearly')" id="billingYearlyBtn" class="text-slate-500 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:text-slate-900">
+                    Yearly (Save 20%)
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
+            
+            <!-- Standard tier -->
+            <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest font-extrabold text-slate-400">Sandbox Trial</span>
+                        <h4 class="text-2xl font-bold text-navy-900 mt-1">Starter Companion</h4>
+                        <p class="text-slate-500 text-xs mt-2">Evaluate basic compliance concepts and try active platform previews.</p>
+                    </div>
+                    <div class="border-y border-slate-100 py-4">
+                        <span class="text-4xl font-black text-navy-900">₹0</span>
+                        <span class="text-xs text-slate-400 block mt-1">Permanent free tier access</span>
+                    </div>
+                    <ul class="space-y-3.5 text-xs text-slate-600 font-medium">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> 5 AI compliance queries/month</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Basic clause templates</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Local court cost estimators</li>
+                        <li class="flex items-center gap-2.5 text-slate-400 line-through"><i class="fa-solid fa-xmark"></i> Advanced multi-document analyzer</li>
+                    </ul>
+                </div>
+                <a href="#interactive-suite" class="mt-8 block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl text-xs transition-all">
+                    Access Sandbox Now
                 </a>
-
-                <!-- Optional: WhatsApp or phone -->
-                <button class="btn-ghost" type="button">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Contact via WhatsApp</span>
-                </button>
             </div>
 
-            <div class="contact-details">
-                <p>
-                    Serious buyers only. Reach out at
-                    <a href="mailto:vritesh.connect@gmail.com">vritesh.connect@gmail.com</a>
-                    with your best offer, or share your budget range to start a conversation.
-                </p>
-            </div>
-        </section>
-
-        <!-- RIGHT: VISUAL CHAT PREVIEW -->
-        <aside class="chat-card">
-            <div class="chat-card-header">
-                <div class="chat-card-header-left">
-                    <div class="bot-avatar">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
+            <!-- Professional Practitioner tier -->
+            <div class="bg-white border-2 border-primary-500 p-8 rounded-2xl shadow-xl shadow-primary-500/5 flex flex-col justify-between relative transform scale-105">
+                <span class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-primary-500 text-white text-[9px] font-black tracking-widest uppercase py-1 px-3.5 rounded-full border border-primary-400">
+                    MOST POPULAR
+                </span>
+                <div class="space-y-6">
                     <div>
-                        <div style="font-size: 13px; font-weight: 600;">VakeelChat (Concept)</div>
-                        <div style="font-size: 11px; opacity: 0.8;">Sample UI – domain only is for sale</div>
+                        <span class="text-xs uppercase tracking-widest font-extrabold text-primary-500">Full Workspace Access</span>
+                        <h4 class="text-2xl font-bold text-navy-900 mt-1">Pro Practitioner</h4>
+                        <p class="text-slate-500 text-xs mt-2">Unlimited workflow optimization suite tailored for modern builders.</p>
                     </div>
+                    <div class="border-y border-slate-100 py-4">
+                        <span id="priceValPro" class="text-4xl font-black text-navy-900">₹1,499</span>
+                        <span class="text-xs text-slate-400 block mt-1" id="pricePeriodPro">Per User / Billed Monthly</span>
+                    </div>
+                    <ul class="space-y-3.5 text-xs text-slate-600 font-medium">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Unlimited AI legal sandbox runs</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Pro Clause Explainer &amp; Risk Finder</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Complete Statutory Database links</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Custom templates &amp; draft exports</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Premium priority query support</li>
+                    </ul>
                 </div>
-                <div class="chat-card-header-right">
-                    <span class="status-dot"></span>
-                    <span>Concept Preview</span>
-                </div>
-            </div>
-            <div class="chat-area" id="chatArea">
-                <div class="message bot">
-                    👋 Welcome to <strong>VakeelChat</strong> – imagine an AI-powered legal assistant that can simplify your legal queries 24×7.
-                </div>
-                <div class="message user">
-                    Can this brand work for an AI legal advice chatbot for Indian users?
-                </div>
-                <div class="message bot">
-                    Absolutely. “Vakeel” is a commonly used Hindi/Urdu word for lawyer, and “Chat”
-                    clearly signals a conversational assistant. It’s short, memorable, and perfect for a legal-tech product.
-                </div>
-                <div class="message user">
-                    What kind of products can I build on this domain?
-                </div>
-                <div class="message bot">
-                    You could build:
-                    <br>• AI legal Q&amp;A assistant
-                    <br>• Client intake &amp; lead generation tool for law firms
-                    <br>• Case status / document tracking portal
-                    <br>• Legal education platform or community
-                    <br><br>
-                    If you’re interested in acquiring this domain, use the contact options on the left.
-                </div>
-            </div>
-            <div class="chat-footer">
-                <input type="text" placeholder="Demo only – chat is not active" disabled />
-                <button type="button" disabled>
-                    <i class="fa-solid fa-paper-plane"></i>
+                <button onclick="triggerPurchaseFlow('Pro Practitioner')" class="mt-8 block text-center bg-primary-500 hover:bg-primary-600 text-white font-bold py-3.5 rounded-xl text-xs transition-all shadow-md shadow-primary-500/10">
+                    Get Workspace Pro
                 </button>
             </div>
-            <div class="chat-muted">
-                This is just a visual preview. Only the <strong>VakeelChat.com</strong> domain/brand is being sold.
-            </div>
-        </aside>
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        © <span id="year"></span> VakeelChat.com · Domain available for acquisition.  
-        Listing by <a href="mailto:vritesh.connect@gmail.com">Owner</a>.
+            <!-- Enterprise custom tier -->
+            <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest font-extrabold text-slate-400">Enterprise High Security</span>
+                        <h4 class="text-2xl font-bold text-navy-900 mt-1">Corporate Guard</h4>
+                        <p class="text-slate-500 text-xs mt-2">Bespoke localized parameters, API integrations, and robust controls.</p>
+                    </div>
+                    <div class="border-y border-slate-100 py-4">
+                        <span class="text-3xl font-black text-navy-900">Custom Scale</span>
+                        <span class="text-xs text-slate-400 block mt-1">Contact for custom pricing</span>
+                    </div>
+                    <ul class="space-y-3.5 text-xs text-slate-600 font-medium">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Dedicated isolated API servers</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Advanced multi-user team spaces</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Customized regional risk scoring keys</li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-500"></i> Enterprise SLA &amp; Support engineers</li>
+                    </ul>
+                </div>
+                <button onclick="triggerPurchaseFlow('Corporate Scale')" class="mt-8 block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl text-xs transition-all">
+                    Contact Sales Core
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 lg:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-primary-500">Direct Clarifications</span>
+                <h2 class="text-3xl font-bold text-navy-900 mt-2">Frequently Asked Questions</h2>
+                <p class="text-slate-500 mt-3 text-sm">Everything you need to know about our workflow tools and computational platform.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaqAccordion(1)" class="w-full text-left px-6 py-5 font-bold text-navy-900 text-sm flex items-center justify-between hover:bg-slate-50">
+                        <span>Is VakeelChat a registered law firm or actual lawyer representation?</span>
+                        <i id="faqChevron1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqAnswer1" class="hidden px-6 pb-5 text-xs text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+                        No. VakeelChat is an AI automation copilot system built to facilitate document research, compliance discovery, and structuring templates. It does not provide formal legal advisory, and is not a registered law firm. You should consult professional legal counsel for high-risk legal litigation.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaqAccordion(2)" class="w-full text-left px-6 py-5 font-bold text-navy-900 text-sm flex items-center justify-between hover:bg-slate-50">
+                        <span>Are Indian Stamp Acts and regional municipal structures integrated?</span>
+                        <i id="faqChevron2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqAnswer2" class="hidden px-6 pb-5 text-xs text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+                        Yes! VakeelChat is designed to factor in localized guidelines like the Karnataka, Delhi, and Maharashtra Stamp Duty standards to provide highly contextual estimates compared to generic AI models.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-all">
+                    <button onclick="toggleFaqAccordion(3)" class="w-full text-left px-6 py-5 font-bold text-navy-900 text-sm flex items-center justify-between hover:bg-slate-50">
+                        <span>Can I host VakeelChat on our company's internal servers?</span>
+                        <i id="faqChevron3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqAnswer3" class="hidden px-6 pb-5 text-xs text-slate-500 leading-relaxed border-t border-slate-100 pt-3">
+                        Yes, our Corporate Guard tier is highly customizable. We offer isolated container deployments and VPC setups to ensure zero compliance information ever leaves your internal company firewalls.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH STATUTORY DISCLAIMER -->
+    <footer class="bg-navy-950 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Branding column -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="h-9 w-9 bg-amber-500 rounded-lg flex items-center justify-center text-navy-950 font-bold">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white tracking-wide">VakeelChat</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+                        Pioneering Indian legal technology with modern generative capabilities. Accelerate dynamic contracting workflows without security friction.
+                    </p>
+                </div>
+
+                <!-- Quick links -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase text-white tracking-wider mb-4">Workspace Navigation</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#features" class="hover:text-amber-400">Core Features</a></li>
+                        <li><a href="#interactive-suite" class="hover:text-amber-400">Clause Diagnostics</a></li>
+                        <li><a href="#interactive-suite" class="hover:text-amber-400">Draft Builders</a></li>
+                        <li><a href="#pricing" class="hover:text-amber-400">Pricing Tiers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal stuff -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase text-white tracking-wider mb-4">Regulatory parameters</h5>
+                    <p class="text-xs leading-relaxed text-slate-500">
+                        Simulations provided on this interface serve as demonstrative structural showcases. This mock platform does not collect production credit credentials.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Disclaimer and signature -->
+            <div class="pt-8 border-t border-slate-800/80 text-center text-[11px] text-slate-500 space-y-4">
+                <p class="max-w-4xl mx-auto leading-relaxed">
+                    Disclaimer: VakeelChat.com is a specialized legal technology sandbox tool. The content, calculation outputs, templates, and audit analysis diagnostics generated via our simulated workspace do not constitute professional legal advice. Users must evaluate critical parameters under independent guidance.
+                </p>
+                <p>© <span id="footerYear"></span> VakeelChat Copilot. All Rights Reserved.</p>
+            </div>
+
+        </div>
     </footer>
 
+    <!-- INTERACTIVE JAVASCRIPT CONTROLLERS -->
     <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Set dynamic current year
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.className = "fa-solid fa-xmark text-xl";
+            } else {
+                menu.classList.add('hidden');
+                icon.className = "fa-solid fa-bars text-xl";
+            }
+        }
+
+        /* ---------------- DEMO CHAT LOGIC ---------------- */
+        const mockBotResponses = {
+            "default": "That's an interesting legal parameter. VakeelChat AI specializes in scanning specific clauses for risk metrics. Head over to our Workspace Suite below to see detailed interactive audits!",
+            "nda": "For a standard Unilateral NDA, always review the 'Definition of Confidential Information' and look out for broad carve-outs that put Disclosing parties at risk.",
+            "tax": "Section 80C enables deductions up to ₹1.5 Lakhs per year. Essential routes include ELSS, PPF, Life Insurance premiums, and structural savings parameters.",
+            "rent": "Stamp duty varies dramatically across Indian states. Delhi charging 2%, Maharashtra 5%, and Karnataka standardizing specific lease duration scales."
+        };
+
+        function sendDemoMessage() {
+            const input = document.getElementById('demoChatInput');
+            const stream = document.getElementById('demoChatStream');
+            const rawText = input.value.trim();
+
+            if (!rawText) return;
+
+            // Append User Msg
+            const userMsgHtml = `
+                <div class="flex items-start gap-2.5 justify-end">
+                    <div class="bg-primary-500 border border-primary-500/20 rounded-2xl rounded-tr-none p-3.5 text-white max-w-[85%]">
+                        ${escapeHtml(rawText)}
+                    </div>
+                </div>`;
+            stream.insertAdjacentHTML('beforeend', userMsgHtml);
+            input.value = '';
+            stream.scrollTop = stream.scrollHeight;
+
+            // Mock Typing State
+            const typingId = "typing-" + Date.now();
+            const typingHtml = `
+                <div class="flex items-start gap-2.5" id="${typingId}">
+                    <div class="w-8 h-8 rounded-lg bg-amber-500 text-navy-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-md">VK</div>
+                    <div class="bg-slate-800/80 border border-slate-700/50 rounded-2xl rounded-tl-none p-3.5 text-slate-400">
+                        <i class="fa-solid fa-ellipsis animate-bounce"></i> Thinking...
+                    </div>
+                </div>`;
+            stream.insertAdjacentHTML('beforeend', typingHtml);
+            stream.scrollTop = stream.scrollHeight;
+
+            setTimeout(() => {
+                const typingEl = document.getElementById(typingId);
+                if (typingEl) typingEl.remove();
+
+                let answerText = mockBotResponses.default;
+                const lowText = rawText.toLowerCase();
+                if (lowText.includes('nda') || lowText.includes('disclosure')) {
+                    answerText = mockBotResponses.nda;
+                } else if (lowText.includes('80c') || lowText.includes('tax')) {
+                    answerText = mockBotResponses.tax;
+                } else if (lowText.includes('stamp') || lowText.includes('rent')) {
+                    answerText = mockBotResponses.rent;
+                }
+
+                const botMsgHtml = `
+                    <div class="flex items-start gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-amber-500 text-navy-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-md">VK</div>
+                        <div class="bg-slate-800/80 border border-slate-700/50 rounded-2xl rounded-tl-none p-3.5 text-slate-200 max-w-[85%]">
+                            ${answerText}
+                        </div>
+                    </div>`;
+                stream.insertAdjacentHTML('beforeend', botMsgHtml);
+                stream.scrollTop = stream.scrollHeight;
+            }, 1000);
+        }
+
+        function triggerQuickPrompt(promptText) {
+            document.getElementById('demoChatInput').value = promptText;
+            sendDemoMessage();
+        }
+
+        function handleDemoKeyPress(e) {
+            if (e.key === 'Enter') sendDemoMessage();
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+
+        /* ---------------- TAB NAVIGATION LOGIC ---------------- */
+        function switchTab(targetTabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            // Show target
+            document.getElementById(targetTabId).classList.remove('hidden');
+
+            // Reset buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.className = "tab-button flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold transition-all bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-800";
+            });
+
+            // Highlight selected button
+            const activeBtn = document.getElementById('btn-' + targetTabId);
+            if (activeBtn) {
+                activeBtn.className = "tab-button flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold transition-all bg-amber-500 text-navy-950 shadow-lg shadow-amber-500/10";
+            }
+        }
+
+
+        /* ---------------- TAB 1: AI CLAUSE ANALYZER LOGIC ---------------- */
+        const sampleClauses = {
+            "nda": "Recipient agrees to hold all confidential disclosures in absolute perpetual secrecy. Recipient shall be solely liable for any data breaches occurring anywhere globally, regardless of whether negligence or willful default can be demonstrated, and shall pay Acme Tech liquid damages of ₹10,00,000 upon any perceived security default.",
+            "noncompete": "Employee covenants that, upon termination of engagement for any reason whatsoever, Employee shall not accept employment, act as an adviser, or associate with any organization, startup, or proprietary firm operating anywhere globally within the exact same software sector for a restrictive duration of sixty (60) months.",
+            "indemnity": "Party B agrees to fully and unconditionally defend and indemnify Party A from and against any losses, legal actions, claim values, expenses, attorney billing, or public relations costs arising out of this project without any monetary limitations or cap on operational liabilities."
+        };
+
+        function setSampleClause(key) {
+            document.getElementById('analyzerInput').value = sampleClauses[key] || '';
+        }
+
+        function runAuditAnalysis() {
+            const rawText = document.getElementById('analyzerInput').value.trim();
+            if (!rawText) return;
+
+            const emptyState = document.getElementById('analyzerEmptyState');
+            const resultsState = document.getElementById('analyzerResultsState');
+            
+            emptyState.classList.add('hidden');
+            resultsState.classList.remove('hidden');
+
+            // Dynamic risk scores depending on keyword matching
+            let riskScore = 30;
+            let barColor = "bg-emerald-500";
+            let severityText = "LOW";
+            let highlights = rawText;
+            let dynamicBulletPoints = '';
+
+            const lowerVal = rawText.toLowerCase();
+
+            if (lowerVal.includes('absolute perpetual secrecy') || lowerVal.includes('regardless of whether negligence') || lowerVal.includes('liquid damages')) {
+                riskScore = 85;
+                barColor = "bg-red-500";
+                severityText = "CRITICAL RISK";
+                // Highlight specific risky phrases
+                highlights = rawText
+                    .replace('absolute perpetual secrecy', '<span class="bg-red-500/30 text-red-200 px-1 rounded border border-red-500/50">absolute perpetual secrecy</span>')
+                    .replace('regardless of whether negligence', '<span class="bg-yellow-500/30 text-yellow-200 px-1 rounded border border-yellow-500/50">regardless of whether negligence</span>')
+                    .replace('liquid damages of ₹10,00,000', '<span class="bg-red-500/30 text-red-200 px-1 rounded border border-red-500/50">liquid damages of ₹10,00,000</span>');
+                
+                dynamicBulletPoints = `
+                    <p class="text-red-400 font-bold">• Broad Liability: Damages triggered regardless of negligence violate balanced indemnity logic.</p>
+                    <p class="text-yellow-400">• Uncapped Secrecy: Perpetual confidentiality definitions without normal project-term bounds are often rejected during audits.</p>
+                    <p class="text-slate-300">• Recommendation: Restrict secrecy term to 2-3 years post-termination, and limit damages strictly to actual direct losses proven in court.</p>`;
+            } 
+            else if (lowerVal.includes('sixty (60) months') || lowerVal.includes('anywhere globally within the exact same')) {
+                riskScore = 95;
+                barColor = "bg-red-600";
+                severityText = "HIGHLY ILLEGAL";
+                highlights = rawText
+                    .replace('sixty (60) months', '<span class="bg-red-500/30 text-red-200 px-1 rounded border border-red-500/50">sixty (60) months</span>')
+                    .replace('anywhere globally within the exact same', '<span class="bg-red-500/30 text-red-200 px-1 rounded border border-red-500/50">anywhere globally within the exact same</span>');
+                
+                dynamicBulletPoints = `
+                    <p class="text-red-400 font-bold">• Statutory Conflict: Post-employment non-compete covenants are generally void under Section 27 of the Indian Contract Act, 1872.</p>
+                    <p class="text-yellow-400">• Broad Restrictive Scope: Global geographic exclusion borders are excessive and unenforceable.</p>
+                    <p class="text-slate-300">• Recommendation: Restrict covenants to reasonable protection of intellectual property rights, omitting post-employment employment bars.</p>`;
+            }
+            else if (lowerVal.includes('defend and indemnify party a') || lowerVal.includes('without any monetary limitations')) {
+                riskScore = 75;
+                barColor = "bg-yellow-500";
+                severityText = "MEDIUM TO HIGH";
+                highlights = rawText
+                    .replace('without any monetary limitations', '<span class="bg-yellow-500/30 text-yellow-200 px-1 rounded border border-yellow-500/50">without any monetary limitations</span>');
+                
+                dynamicBulletPoints = `
+                    <p class="text-yellow-400 font-bold">• Risk Exposure: Uncapped liability clauses expose operations to severe balance-sheet risks.</p>
+                    <p class="text-slate-300">• Recommendation: Always negotiate a reasonable cap on operational liability (e.g., 1x or 2x the standard professional fees received under the contract).</p>`;
+            }
+            else {
+                // Default fallback for user's custom inputs
+                highlights = `No severe risks detected automatically. Dynamic system output: <span class="bg-emerald-500/20 text-emerald-300 px-1 rounded border border-emerald-500/30">${rawText}</span>`;
+                dynamicBulletPoints = `
+                    <p class="text-emerald-400 font-bold">• Analysis Result: The clause matches basic transactional framework criteria.</p>
+                    <p class="text-slate-300">• Suggestion: Verify governing jurisdiction clauses remain compatible with local stamp provisions.</p>`;
+            }
+
+            // Update UI elements
+            const badge = document.getElementById('riskScoreBadge');
+            badge.innerText = `${riskScore}% - ${severityText}`;
+            badge.className = `font-extrabold text-sm px-3 py-1 rounded-lg border text-white ${riskScore > 70 ? 'bg-red-500/20 border-red-500' : 'bg-emerald-500/20 border-emerald-500'}`;
+
+            const meter = document.getElementById('riskMeterBar');
+            meter.style.width = `${riskScore}%`;
+            // Reset status color classes
+            meter.className = `h-full transition-all duration-700 ${barColor}`;
+
+            document.getElementById('analyzerAnnotationArea').innerHTML = highlights;
+            document.getElementById('analysisDetails').innerHTML = dynamicBulletPoints;
+        }
+
+
+        /* ---------------- TAB 2: CONTRACT TEMPLATE BUILDER LOGIC ---------------- */
+        const draftsTemplates = {
+            "nda": `MUTUAL NON-DISCLOSURE AGREEMENT
+This Agreement is entered into on this ______ day of __________, 20__ (the "Effective Date"), by and between:
+1. {{PARTY_ONE}} (the "Discloser/Recipient"), and
+2. {{PARTY_TWO}} (the "Discloser/Recipient").
+
+WHEREAS, the parties wish to evaluate a potential business collaboration and may share confidential materials.
+NOW, THEREFORE:
+Section 1. Confidential Information:
+The term "Confidential Information" shall include all proprietary insights, codebases, business strategies, and structural data.
+Section 2. Mandatory Term of Protection:
+The Recipient agrees to hold Confidential Information in trust for a duration of {{VAL_PARAM}}, starting from the Effective Date.
+Section 3. Governing Law:
+This Agreement shall be interpreted and enforced under the laws of {{JURISDICTION}}.`,
+
+            "lease": `MODEL RESIDENTIAL / COMMERCIAL LEASE OUTLINE
+This Lease Frame is made on this ______ day of __________, 20__ by and between:
+1. {{PARTY_ONE}} (the "Lessor"), and
+2. {{PARTY_TWO}} (the "Lessee").
+
+TERMS AND CONDITIONS:
+Section 1. Premise & Monthly Rates:
+The Lessor agrees to lease the designated property to the Lessee for the specified rent value.
+Section 2. Duration of Lease:
+This lease shall remain active for a duration of {{VAL_PARAM}} from execution.
+Section 3. Dispute & Jurisdictional Authority:
+All legal conflicts shall be settled under the jurisdiction of {{JURISDICTION}}.`,
+
+            "consultancy": `CONSULTANCY ENGAGEMENT & LETTER AGREEMENT
+This Letter Agreement governs the engagement between:
+1. {{PARTY_ONE}} (the "Client Company"), and
+2. {{PARTY_TWO}} (the "Independent Advisor").
+
+WHEREAS, Client desires professional services for a specified timeframe.
+Section 1. Deliverables & Services Scope:
+Advisor agrees to complete tasks according to specifications over {{VAL_PARAM}}.
+Section 2. Governing Authority:
+Both parties submit to the courts located in {{JURISDICTION}} for any issues arising under this relationship.`
+        };
+
+        function updateDraftForm() {
+            const selectVal = document.getElementById('draftDocType').value;
+            const paramLabel = document.getElementById('paramLabel');
+            const paramInput = document.getElementById('draftValParam');
+
+            if (selectVal === 'nda') {
+                paramLabel.innerText = "Effective Duration (Months):";
+                paramInput.value = "24 Months";
+            } else if (selectVal === 'lease') {
+                paramLabel.innerText = "Lease Duration (Months):";
+                paramInput.value = "11 Months";
+            } else {
+                paramLabel.innerText = "Engagement Frame:";
+                paramInput.value = "6 Months";
+            }
+        }
+
+        function generateCustomDraft() {
+            const docType = document.getElementById('draftDocType').value;
+            const partyOne = document.getElementById('draftPartyOne').value || "Party A";
+            const partyTwo = document.getElementById('draftPartyTwo').value || "Party B";
+            const valParam = document.getElementById('draftValParam').value || "TBD";
+            const jurisdiction = document.getElementById('draftJurisdiction').value || "Local Jurisdiction";
+
+            let rawTemplate = draftsTemplates[docType];
+            
+            // Replace tags
+            let compiled = rawTemplate
+                .replace(/{{PARTY_ONE}}/g, partyOne)
+                .replace(/{{PARTY_TWO}}/g, partyTwo)
+                .replace(/{{VAL_PARAM}}/g, valParam)
+                .replace(/{{JURISDICTION}}/g, jurisdiction);
+
+            document.getElementById('draftOutputBody').innerText = compiled;
+        }
+
+        function copyGeneratedDraftToClipboard() {
+            const textToCopy = document.getElementById('draftOutputBody').innerText;
+            const tempInput = document.createElement("textarea");
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Visual feedback
+            const btnText = document.getElementById('copyBtnText');
+            btnText.innerText = "Copied!";
+            setTimeout(() => {
+                btnText.innerText = "Copy Outline";
+            }, 1800);
+        }
+
+
+        /* ---------------- TAB 3: LEGAL FEE & STAMP ESTIMATOR LOGIC ---------------- */
+        function updateCalcPlaceholders() {
+            const docType = document.getElementById('calcDocType').value;
+            const valLabel = document.getElementById('calcValueLabel');
+            const valInput = document.getElementById('calcValueAmount');
+
+            if (docType === 'recovery_suit') {
+                valLabel.innerText = "Debt Claim Value (INR):";
+                valInput.value = "1000000";
+            } else if (docType === 'business_contract') {
+                valLabel.innerText = "Authorized / Capital Investment (INR):";
+                valInput.value = "250000";
+            } else {
+                valLabel.innerText = "Annual Rent Amount (INR):";
+                valInput.value = "480000";
+            }
+        }
+
+        function calculateSimulatedFees() {
+            const state = document.getElementById('calcState').value;
+            const docType = document.getElementById('calcDocType').value;
+            const amount = parseFloat(document.getElementById('calcValueAmount').value) || 0;
+
+            let stampPercent = 0.005; // 0.5% standard
+            let courtFeePercent = 0.015; // 1.5% standard
+
+            if (state === 'karnataka') {
+                stampPercent = docType === 'commercial_lease' ? 0.01 : 0.008;
+                courtFeePercent = docType === 'recovery_suit' ? 0.025 : 0.015;
+            } else if (state === 'maharashtra') {
+                stampPercent = 0.012;
+                courtFeePercent = 0.02;
+            } else if (state === 'delhi') {
+                stampPercent = 0.02;
+                courtFeePercent = 0.012;
+            }
+
+            // Calculation math
+            let estimatedStamp = Math.round(amount * stampPercent);
+            let estimatedCourtFee = Math.round(amount * courtFeePercent);
+
+            // Cap checks
+            if (estimatedStamp < 100) estimatedStamp = 100;
+            if (estimatedCourtFee < 250) estimatedCourtFee = 250;
+
+            // Render calculations
+            document.getElementById('resStampDuty').innerText = `₹${estimatedStamp.toLocaleString('en-IN')}`;
+            document.getElementById('resCourtFee').innerText = `₹${estimatedCourtFee.toLocaleString('en-IN')}`;
+
+            // Render context explanation box
+            const explainer = document.getElementById('calcFrameworkExplainer');
+            explainer.innerHTML = `
+                <p>• <strong>State Stamp Calculations:</strong> Stamp duty estimated at ${(stampPercent*100).toFixed(2)}% based on local state rules for the specified documents.</p>
+                <p>• <strong>Suit valuation basis:</strong> Estimated standard filing court fee calculated at ${(courtFeePercent*100).toFixed(2)}% based on claim limits.</p>
+                <p>• <strong>Caveat:</strong> Complex high-value property deeds may attract additional registration surcharges of 1% depending on municipal zoning parameters.</p>
+            `;
+        }
+
+
+        /* ---------------- PRICING TOGGLE ---------------- */
+        function toggleBillingPeriod(period) {
+            const monthlyBtn = document.getElementById('billingMonthlyBtn');
+            const yearlyBtn = document.getElementById('billingYearlyBtn');
+            
+            const proPrice = document.getElementById('priceValPro');
+            const proPeriod = document.getElementById('pricePeriodPro');
+
+            if (period === 'monthly') {
+                monthlyBtn.className = "bg-white text-navy-900 px-4 py-2 rounded-lg text-xs font-bold transition-all shadow-sm";
+                yearlyBtn.className = "text-slate-500 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:text-slate-900";
+                
+                proPrice.innerText = "₹1,499";
+                proPeriod.innerText = "Per User / Billed Monthly";
+            } else {
+                yearlyBtn.className = "bg-white text-navy-900 px-4 py-2 rounded-lg text-xs font-bold transition-all shadow-sm";
+                monthlyBtn.className = "text-slate-500 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:text-slate-900";
+                
+                proPrice.innerText = "₹1,199";
+                proPeriod.innerText = "Per User / Billed Annually (Save 20%)";
+            }
+        }
+
+        function triggerPurchaseFlow(planName) {
+            // Simulated payment notification
+            const modalHtml = `
+                <div id="simulatedModal" class="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm">
+                    <div class="bg-white rounded-3xl p-8 max-w-md w-full border border-slate-200 shadow-2xl relative text-center space-y-5">
+                        <div class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-2xl mx-auto">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-extrabold text-navy-900">Sandbox Upgrade Route</h4>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                You selected the <strong>${planName}</strong> framework simulation. In production, this launches your integrated Razorpay or Stripe gateway workflow.
+                            </p>
+                        </div>
+                        <button onclick="closeSimulatedModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl text-xs transition-all">
+                            Back to Workspace Sandbox
+                        </button>
+                    </div>
+                </div>`;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function closeSimulatedModal() {
+            const modal = document.getElementById('simulatedModal');
+            if (modal) modal.remove();
+        }
+
+
+        /* ---------------- FAQ ACCORDION ---------------- */
+        function toggleFaqAccordion(index) {
+            const ans = document.getElementById(`faqAnswer${index}`);
+            const chevron = document.getElementById(`faqChevron${index}`);
+            
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Initialize default tabs and clauses on startup
+        window.onload = function() {
+            setSampleClause('nda');
+            generateCustomDraft();
+            calculateSimulatedFees();
+        };
     </script>
 </body>
 </html>
